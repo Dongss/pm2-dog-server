@@ -37,7 +37,8 @@ function pm2Server(callback) {
 }
 
 // App server
-module.exports = function(port, host) {
+module.exports = function(port, host, inverval) {
+    GLOBAL.interval = inverval || 10000;
     pm2Server(function(err) {
         if (err) { 
             GLOBAL.logger.error("PM2 connect err: ", err);

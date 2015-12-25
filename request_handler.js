@@ -97,7 +97,7 @@ module.exports.ioInit = function(io) {
 
     io.on('connection', function(socket) {
         GLOBAL.logger.info("io on conneted");
-        setInterval(onGetList, 10000)
+        setInterval(onGetList, GLOBAL.interval)
         socket.on('get_list', onGetList);
     });
 };
