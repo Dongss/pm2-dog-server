@@ -17,6 +17,7 @@ Local or remote host:
 ```
 git clone https://github.com/Dongss/pm2-dog-server
 cd pm2-dog-server
+npm install
 node index.js
 ```
 
@@ -35,6 +36,7 @@ Admin host
 ```
 git clone https://github.com/Dongss/pm2-dog-admin
 cd pm2-dog-admin
+npm install
 node index.js --config config.json
 ```
 
