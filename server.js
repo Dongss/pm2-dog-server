@@ -5,7 +5,6 @@ var url = require("url");
 var server = http.createServer(route);
 var io = require("socket.io")(server);
 var requestHandler = require("./request_handler");
-requestHandler.ioInit(io);
 GLOBAL.logger = GLOBAL.logger || console;
 
 // Routes
@@ -39,6 +38,7 @@ function pm2Server(callback) {
 // App server
 module.exports = function(port, host, inverval) {
     GLOBAL.interval = inverval || 10000;
+    requestHandler.ioInit(io);
     pm2Server(function(err) {
         if (err) { 
             GLOBAL.logger.error("PM2 connect err: ", err);
