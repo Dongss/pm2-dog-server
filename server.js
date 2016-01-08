@@ -39,6 +39,7 @@ function pm2Server(callback) {
 module.exports = function(port, host, inverval) {
     GLOBAL.interval = inverval || 10000;
     requestHandler.ioInit(io);
+    require("./event_listener")(io); // Event listener
     pm2Server(function(err) {
         if (err) { 
             GLOBAL.logger.error("PM2 connect err: ", err);
